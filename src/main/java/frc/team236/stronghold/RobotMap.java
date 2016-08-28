@@ -8,4 +8,10 @@ public class RobotMap {
 		public static final int DIO_ENCODER_RIGHT_A = 2;
 		public static final int DIO_ENCODER_RIGHT_B = 3;
 	}
+
+	public class ArmMap {
+		public static final int PWM_MOTOR = 5;
+		public static final int DIO_ENCODER_A = 4;
+		public static final int DIO_ENCODER_B = 5;
+	}
 }
