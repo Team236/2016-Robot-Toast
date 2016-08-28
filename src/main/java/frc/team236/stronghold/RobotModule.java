@@ -53,6 +53,7 @@ public class RobotModule extends IterativeModule {
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
 		shooter = new Shooter();
+		intake = new Intake();
 	}
 
 	@Override
