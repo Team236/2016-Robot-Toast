@@ -14,4 +14,8 @@ public class RobotMap {
 		public static final int DIO_ENCODER_A = 4;
 		public static final int DIO_ENCODER_B = 5;
 	}
+
+	public class Shooter {
+		public static final int PWM_MOTOR = 7;
+	}
 }
