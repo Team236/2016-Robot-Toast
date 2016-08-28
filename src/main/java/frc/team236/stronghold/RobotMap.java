@@ -18,4 +18,9 @@ public class RobotMap {
 	public class Shooter {
 		public static final int PWM_MOTOR = 7;
 	}
+
+	public class Intake {
+		public static final int PWM_MOTOR = 4;
+		public static final int DIO_LIMIT = 8;
+	}
 }

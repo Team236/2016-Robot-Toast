@@ -2,6 +2,7 @@ package frc.team236.stronghold;
 
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.team236.stronghold.subsystems.Arm;
+import frc.team236.stronghold.subsystems.Intake;
 import frc.team236.stronghold.subsystems.Shooter;
 import frc.team236.ticktank.ControllerType;
 import frc.team236.ticktank.Settings;
@@ -13,10 +14,11 @@ public class RobotModule extends IterativeModule {
 
 	public static Logger logger;
 
+	public static Settings driveConfig;
 	public static TickTank tank;
 	public static Arm arm;
 	public static Shooter shooter;
-	public static Settings driveConfig;
+	public static Intake intake;
 
 	public static OI oi = new OI();
 
@@ -27,7 +29,7 @@ public class RobotModule extends IterativeModule {
 
 	@Override
 	public String getModuleVersion() {
-		return "1.1.2";
+		return "1.1.3";
 	}
 
 	@Override
