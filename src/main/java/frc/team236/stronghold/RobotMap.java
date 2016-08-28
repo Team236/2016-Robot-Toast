@@ -17,6 +17,8 @@ public class RobotMap {
 
 	public class Shooter {
 		public static final int PWM_MOTOR = 7;
+		public static final int SOL_FORWARD = 2;
+		public static final int SOL_REVERSE = 3;
 	}
 
 	public class Intake {
