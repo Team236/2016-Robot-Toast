@@ -40,8 +40,7 @@ public class RobotModule extends IterativeModule {
 		driveConfig.setControllerType(ControllerType.VICTORSP);
 		try {
 			driveConfig.setLeftEncoderPort(RobotMap.Drive.DIO_ENCODER_LEFT_A, RobotMap.Drive.DIO_ENCODER_LEFT_B);
-			driveConfig.setRightEncoderPort(RobotMap.Drive.DIO_ENCODER_RIGHT_A,
-					RobotMap.Drive.DIO_ENCODER_RIGHT_B);
+			driveConfig.setRightEncoderPort(RobotMap.Drive.DIO_ENCODER_RIGHT_A, RobotMap.Drive.DIO_ENCODER_RIGHT_B);
 			tank = new TickTank(driveConfig);
 		} catch (UnsatisfiedLinkError e) {
 			logger.warn("No encoders will be used in simulation");
@@ -49,8 +48,6 @@ public class RobotModule extends IterativeModule {
 		}
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
-
-		Scheduler.getInstance().run();
 	}
 
 	@Override
