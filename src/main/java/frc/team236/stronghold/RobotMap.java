@@ -25,4 +25,8 @@ public class RobotMap {
 		public static final int PWM_MOTOR = 4;
 		public static final int DIO_LIMIT = 8;
 	}
+
+	public class Climber {
+		public static final int PWM_MOTOR = 6;
+	}
 }
