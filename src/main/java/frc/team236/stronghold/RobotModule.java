@@ -29,7 +29,7 @@ public class RobotModule extends IterativeModule {
 
 	@Override
 	public String getModuleVersion() {
-		return "1.1.4";
+		return "1.1.5";
 	}
 
 	@Override
@@ -42,13 +42,13 @@ public class RobotModule extends IterativeModule {
 		driveConfig.setRightStick(oi.rightStick);
 		driveConfig.setCount(RobotMap.Drive.MOTOR_COUNT);
 		driveConfig.setControllerType(ControllerType.VICTORSP);
+		driveConfig.addGyro();
 		try {
 			driveConfig.setLeftEncoderPort(RobotMap.Drive.DIO_ENCODER_LEFT_A, RobotMap.Drive.DIO_ENCODER_LEFT_B);
 			driveConfig.setRightEncoderPort(RobotMap.Drive.DIO_ENCODER_RIGHT_A, RobotMap.Drive.DIO_ENCODER_RIGHT_B);
 			tank = new TickTank(driveConfig);
 		} catch (UnsatisfiedLinkError e) {
-			logger.warn("No encoders will be used in simulation");
-			driveConfig.hasEncoders = false;
+			logger.severe("No encoders will be used in simulation");
 		}
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
