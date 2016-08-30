@@ -11,6 +11,8 @@ public class Shooter extends Subsystem {
 	private SpeedController motor;
 	private DoubleSolenoid sol;
 
+	public boolean isCocked;
+
 	public Shooter() {
 		motor = new Spark(RobotMap.Shooter.PWM_MOTOR);
 		motor.setInverted(RobotMap.Shooter.INV_MOTOR);
@@ -20,7 +22,6 @@ public class Shooter extends Subsystem {
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void setSpeed(double speed) {
@@ -55,5 +56,9 @@ public class Shooter extends Subsystem {
 
 	public void retractPin() {
 		setSol(-1);
+	}
+
+	public void setIsCocked(boolean state) {
+		this.isCocked = state;
 	}
 }
