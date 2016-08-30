@@ -38,26 +38,45 @@ public class RobotModule extends IterativeModule {
 	public void robotInit() {
 		logger = new Logger("2016-Robot-Toast", Logger.ATTR_DEFAULT);
 
-		// Build tank drive
-		driveConfig = new Settings();
-		driveConfig.setLeftStick(oi.leftStick);
-		driveConfig.setRightStick(oi.rightStick);
-		driveConfig.setCount(RobotMap.Drive.MOTOR_COUNT);
-		driveConfig.setControllerType(ControllerType.VICTORSP);
-		driveConfig.addGyro();
-		driveConfig.setLeftEncoderPort(RobotMap.Drive.DIO_ENCODER_LEFT_A, RobotMap.Drive.DIO_ENCODER_LEFT_B);
-		driveConfig.setRightEncoderPort(RobotMap.Drive.DIO_ENCODER_RIGHT_A, RobotMap.Drive.DIO_ENCODER_RIGHT_B);
-		driveConfig.invertRightMotors(RobotMap.Drive.INV_LEFT_MOTORS);
-		driveConfig.invertRightMotors(RobotMap.Drive.INV_RIGHT_MOTORS);
-		driveConfig.invertLeftEncoder(RobotMap.Drive.INV_LEFT_ENCODER);
-		driveConfig.invertRightEncoder(RobotMap.Drive.INV_RIGHT_ENCODER);
-		driveConfig.setDistancePerPulse(RobotMap.Drive.DISTANCE_PER_PULSE);
+		driveConfig = buildSettings();
 
+		// Build subsystems
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
 		shooter = new Shooter();
 		intake = new Intake();
 		climber = new Climber();
+	}
+
+	private Settings buildSettings() {
+		// Build tank drive
+		driveConfig = new Settings();
+
+		// Add sticks
+		driveConfig.leftStick = oi.leftStick;
+		driveConfig.rightStick = oi.rightStick;
+
+		// Add encoder ports
+		driveConfig.leftEncoderA = RobotMap.Drive.DIO_ENCODER_LEFT_A;
+		driveConfig.leftEncoderB = RobotMap.Drive.DIO_ENCODER_LEFT_B;
+		driveConfig.rightEncoderA = RobotMap.Drive.DIO_ENCODER_RIGHT_A;
+		driveConfig.rightEncoderB = RobotMap.Drive.DIO_ENCODER_RIGHT_B;
+
+		// Invert motors
+		driveConfig.leftInv = RobotMap.Drive.INV_LEFT_MOTORS;
+		driveConfig.rightInv = RobotMap.Drive.INV_RIGHT_MOTORS;
+
+		// Invert encoders
+		driveConfig.leftInvEncoder = RobotMap.Drive.INV_LEFT_ENCODER;
+		driveConfig.rightInvEncoder = RobotMap.Drive.INV_RIGHT_ENCODER;
+
+		// Miscellaneous
+		driveConfig.motorCount = RobotMap.Drive.MOTOR_COUNT;
+		driveConfig.controllerType = ControllerType.VICTORSP;
+		driveConfig.hasGyro = true;
+		driveConfig.dpp = RobotMap.Drive.DISTANCE_PER_PULSE;
+
+		return driveConfig;
 	}
 
 	@Override
