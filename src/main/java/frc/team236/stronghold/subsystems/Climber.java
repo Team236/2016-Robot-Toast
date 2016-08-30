@@ -24,4 +24,8 @@ public class Climber extends Subsystem {
 			motor.set(speed);
 		}
 	}
+
+	public void stop() {
+		setSpeed(0);
+	}
 }
