@@ -8,6 +8,9 @@ public class RobotMap {
 		public static final int DIO_ENCODER_RIGHT_A = 2;
 		public static final int DIO_ENCODER_RIGHT_B = 3;
 
+		public static final double CIRCUMFERENCE = 28;
+		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / (3 * 512);
+
 		public static final boolean INV_LEFT_MOTORS = false;
 		public static final boolean INV_RIGHT_MOTORS = false;
 

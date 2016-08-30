@@ -31,7 +31,7 @@ public class RobotModule extends IterativeModule {
 
 	@Override
 	public String getModuleVersion() {
-		return "1.2.4";
+		return "1.2.5";
 	}
 
 	@Override
@@ -51,6 +51,7 @@ public class RobotModule extends IterativeModule {
 		driveConfig.invertRightMotors(RobotMap.Drive.INV_RIGHT_MOTORS);
 		driveConfig.invertLeftEncoder(RobotMap.Drive.INV_LEFT_ENCODER);
 		driveConfig.invertRightEncoder(RobotMap.Drive.INV_RIGHT_ENCODER);
+		driveConfig.setDistancePerPulse(RobotMap.Drive.DISTANCE_PER_PULSE);
 
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
