@@ -13,6 +13,6 @@ public class ControlMap {
 	}
 
 	public class Controller {
-
+		public static final int AXIS_ARM = LogitechF310.Axes.LEFT_Y;
 	}
 }

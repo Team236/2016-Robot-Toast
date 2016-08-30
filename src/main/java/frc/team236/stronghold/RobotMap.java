@@ -1,5 +1,6 @@
 package frc.team236.stronghold;
 
+import frc.team236.pid.PIDParameters;
 import frc.team236.ticktank.ControllerType;
 
 public class RobotMap {
@@ -33,6 +34,11 @@ public class RobotMap {
 
 		public static final int DIO_LIMIT_TOP = 6;
 		public static final int DIO_LIMIT_BOTTOM = 7;
+
+		public static final PIDParameters GAINS = new PIDParameters(0.001, 0, 0, 1 / 200.0);
+
+		public static final int TOP_RAW = 6600;
+		public static final int BOTTOM_RAW = 0;
 	}
 
 	public static class Shooter {
