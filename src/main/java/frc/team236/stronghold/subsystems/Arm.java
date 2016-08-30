@@ -30,6 +30,11 @@ public class Arm extends Subsystem {
 	}
 
 	public void setSpeed(double speed) {
+		if (top.get() && speed > 0) {
+			speed = 0;
+		} else if (bottom.get() && speed < 0) {
+			speed = 0;
+		}
 		motor.set(speed);
 	}
 
