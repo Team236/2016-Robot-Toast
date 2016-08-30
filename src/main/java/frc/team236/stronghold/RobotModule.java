@@ -29,7 +29,7 @@ public class RobotModule extends IterativeModule {
 
 	@Override
 	public String getModuleVersion() {
-		return "1.2.0";
+		return "1.2.1";
 	}
 
 	@Override
@@ -50,6 +50,7 @@ public class RobotModule extends IterativeModule {
 		} catch (UnsatisfiedLinkError e) {
 			logger.severe("No encoders will be used in simulation");
 		}
+
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
 		shooter = new Shooter();

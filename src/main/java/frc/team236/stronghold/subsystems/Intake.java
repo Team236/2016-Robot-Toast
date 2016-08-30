@@ -13,6 +13,7 @@ public class Intake extends Subsystem {
 
 	public Intake() {
 		motor = new Spark(RobotMap.Intake.PWM_MOTOR);
+		motor.setInverted(RobotMap.Intake.INV_MOTOR);
 		limit = new DigitalInput(RobotMap.Intake.DIO_LIMIT);
 	}
 

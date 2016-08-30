@@ -11,15 +11,16 @@ public class Shooter extends Subsystem {
 	private SpeedController motor;
 	private DoubleSolenoid sol;
 
+	public Shooter() {
+		motor = new Spark(RobotMap.Shooter.PWM_MOTOR);
+		motor.setInverted(RobotMap.Shooter.INV_MOTOR);
+		sol = new DoubleSolenoid(RobotMap.Shooter.SOL_FORWARD, RobotMap.Shooter.SOL_REVERSE);
+	}
+
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
 
-	}
-
-	public Shooter() {
-		motor = new Spark(RobotMap.Shooter.PWM_MOTOR);
-		sol = new DoubleSolenoid(RobotMap.Shooter.SOL_FORWARD, RobotMap.Shooter.SOL_REVERSE);
 	}
 
 	public void setSpeed(double speed) {

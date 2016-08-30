@@ -12,8 +12,11 @@ public class Arm extends Subsystem {
 	public Encoder encoder;
 
 	public Arm() {
-		encoder = new Encoder(RobotMap.Arm.DIO_ENCODER_A, RobotMap.Arm.DIO_ENCODER_B);
 		motor = new Talon(RobotMap.Arm.PWM_MOTOR);
+		motor.setInverted(RobotMap.Arm.INV_MOTOR);
+
+		encoder = new Encoder(RobotMap.Arm.DIO_ENCODER_A, RobotMap.Arm.DIO_ENCODER_B);
+		encoder.setDistancePerPulse(RobotMap.Arm.DISTANCE_PER_PULSE);
 	}
 
 	@Override
@@ -31,5 +34,9 @@ public class Arm extends Subsystem {
 
 	public void zeroEncoder() {
 		encoder.reset();
+	}
+
+	public double getEncoderDistance() {
+		return encoder.getDistance();
 	}
 }

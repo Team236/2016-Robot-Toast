@@ -11,6 +11,7 @@ public class Climber extends Subsystem {
 
 	public Climber() {
 		motor = new Talon(RobotMap.Climber.PWM_MOTOR);
+		motor.setInverted(RobotMap.Climber.INV_MOTOR);
 	}
 
 	@Override
@@ -23,5 +24,4 @@ public class Climber extends Subsystem {
 			motor.set(speed);
 		}
 	}
-
 }
