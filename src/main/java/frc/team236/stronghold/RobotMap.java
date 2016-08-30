@@ -7,6 +7,12 @@ public class RobotMap {
 		public static final int DIO_ENCODER_LEFT_B = 1;
 		public static final int DIO_ENCODER_RIGHT_A = 2;
 		public static final int DIO_ENCODER_RIGHT_B = 3;
+
+		public static final boolean INV_LEFT_MOTORS = false;
+		public static final boolean INV_RIGHT_MOTORS = false;
+
+		public static final boolean INV_LEFT_ENCODER = false;
+		public static final boolean INV_RIGHT_ENCODER = true;
 	}
 
 	public class Arm {

@@ -31,7 +31,7 @@ public class RobotModule extends IterativeModule {
 
 	@Override
 	public String getModuleVersion() {
-		return "1.2.3";
+		return "1.2.4";
 	}
 
 	@Override
@@ -45,13 +45,12 @@ public class RobotModule extends IterativeModule {
 		driveConfig.setCount(RobotMap.Drive.MOTOR_COUNT);
 		driveConfig.setControllerType(ControllerType.VICTORSP);
 		driveConfig.addGyro();
-		try {
-			driveConfig.setLeftEncoderPort(RobotMap.Drive.DIO_ENCODER_LEFT_A, RobotMap.Drive.DIO_ENCODER_LEFT_B);
-			driveConfig.setRightEncoderPort(RobotMap.Drive.DIO_ENCODER_RIGHT_A, RobotMap.Drive.DIO_ENCODER_RIGHT_B);
-			tank = new TickTank(driveConfig);
-		} catch (UnsatisfiedLinkError e) {
-			logger.severe("No encoders will be used in simulation");
-		}
+		driveConfig.setLeftEncoderPort(RobotMap.Drive.DIO_ENCODER_LEFT_A, RobotMap.Drive.DIO_ENCODER_LEFT_B);
+		driveConfig.setRightEncoderPort(RobotMap.Drive.DIO_ENCODER_RIGHT_A, RobotMap.Drive.DIO_ENCODER_RIGHT_B);
+		driveConfig.invertRightMotors(RobotMap.Drive.INV_LEFT_MOTORS);
+		driveConfig.invertRightMotors(RobotMap.Drive.INV_RIGHT_MOTORS);
+		driveConfig.invertLeftEncoder(RobotMap.Drive.INV_LEFT_ENCODER);
+		driveConfig.invertRightEncoder(RobotMap.Drive.INV_RIGHT_ENCODER);
 
 		tank = new TickTank(driveConfig);
 		arm = new Arm();
