@@ -17,6 +17,9 @@ public class RobotMap {
 		public static final int DIO_ENCODER_B = 5;
 		public static final boolean INV_ENCODER = false;
 		public static final double DISTANCE_PER_PULSE = 1;
+
+		public static final int DIO_LIMIT_TOP = 6;
+		public static final int DIO_LIMIT_BOTTOM = 7;
 	}
 
 	public class Shooter {
