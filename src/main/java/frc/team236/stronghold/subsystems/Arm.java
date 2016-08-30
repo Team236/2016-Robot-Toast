@@ -38,6 +38,10 @@ public class Arm extends Subsystem {
 		motor.set(speed);
 	}
 
+	public void stop() {
+		this.setSpeed(0);
+	}
+
 	public double getRawEncoder() {
 		return encoder.getRaw();
 	}
