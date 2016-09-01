@@ -20,6 +20,9 @@ public class RobotMap {
 		public static final boolean INV_LEFT_ENCODER = false;
 		public static final boolean INV_RIGHT_ENCODER = true;
 
+		public static final int SOL_FORWARD = 0;
+		public static final int SOL_REVERSE = 1;
+
 		public static final ControllerType MOTOR_TYPE = ControllerType.VICTORSP;
 	}
 

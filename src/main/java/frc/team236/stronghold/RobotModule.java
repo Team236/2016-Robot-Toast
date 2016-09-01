@@ -31,7 +31,7 @@ public class RobotModule extends IterativeModule {
 
 	@Override
 	public String getModuleVersion() {
-		return "1.2.5";
+		return "1.2.6";
 	}
 
 	@Override
@@ -61,6 +61,10 @@ public class RobotModule extends IterativeModule {
 		driveConfig.leftEncoderB = RobotMap.Drive.DIO_ENCODER_LEFT_B;
 		driveConfig.rightEncoderA = RobotMap.Drive.DIO_ENCODER_RIGHT_A;
 		driveConfig.rightEncoderB = RobotMap.Drive.DIO_ENCODER_RIGHT_B;
+
+		// Shifters
+		driveConfig.solForward = RobotMap.Drive.SOL_FORWARD;
+		driveConfig.solReverse = RobotMap.Drive.SOL_REVERSE;
 
 		// Invert motors
 		driveConfig.leftInv = RobotMap.Drive.INV_LEFT_MOTORS;

@@ -12,6 +12,7 @@ import frc.team236.stronghold.commands.intake.IntakeOverride;
 import frc.team236.stronghold.commands.shooter.Cock;
 import frc.team236.stronghold.commands.shooter.ShootCycle;
 import frc.team236.ticktank.commands.DriveWithJoysticks;
+import frc.team236.ticktank.commands.ShiftUp;
 
 public class OI {
 	public Joystick leftStick;
@@ -56,6 +57,10 @@ public class OI {
 		intakeOverride.whileHeld(new IntakeOverride());
 
 		// Right Stick
+		shiftUp = new JoystickButton(rightStick, ControlMap.RightStick.SHIFT_UP);
+		shiftUp.whenPressed(new ShiftUp(RobotModule.tank));
+
+		shiftDown = new JoystickButton(rightStick, ControlMap.RightStick.SHIFT_DOWN);
 
 		// Controller
 		armWithJoystick = new JoystickButton(controller, ControlMap.Controller.ENABLE_JOYSTICK);
