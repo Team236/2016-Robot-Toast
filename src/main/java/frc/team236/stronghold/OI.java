@@ -13,6 +13,7 @@ import frc.team236.stronghold.commands.shooter.Cock;
 import frc.team236.stronghold.commands.shooter.ShootCycle;
 import frc.team236.ticktank.commands.DriveWithJoysticks;
 import frc.team236.ticktank.commands.ShiftUp;
+import frc.team236.ticktank.commands.ShiftDown;
 
 public class OI {
 	public Joystick leftStick;
@@ -61,6 +62,8 @@ public class OI {
 		shiftUp.whenPressed(new ShiftUp(RobotModule.tank));
 
 		shiftDown = new JoystickButton(rightStick, ControlMap.RightStick.SHIFT_DOWN);
+		shiftDown.whenPressed(new ShiftDown(RobotModule.tank));
+
 
 		// Controller
 		armWithJoystick = new JoystickButton(controller, ControlMap.Controller.ENABLE_JOYSTICK);
